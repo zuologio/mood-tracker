@@ -1,0 +1,4 @@
+/* Reset/normalize minimal; component styles live in App.css */
+html, body { min-width: 320px; }
+body { margin: 0; display: block; }
+
