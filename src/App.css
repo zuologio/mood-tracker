@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* Remove template root constraints to allow full-width header */
 
 :root {
   --bg: #0b1215;
@@ -43,7 +38,7 @@ header {
 header h1 { margin: 0; font-size: 18px; letter-spacing: .3px; }
 header .sub { color: var(--muted); font-size: 12px; margin-top: 4px; }
 
-.container { padding: 16px; padding-bottom: calc(var(--tabbar-h) + 16px + var(--safe-bottom)); }
+.container { padding: 12px; padding-bottom: calc(var(--tabbar-h) + 16px + var(--safe-bottom)); }
 .container { max-width: 720px; margin: 0 auto; }
 
 .panel {
@@ -52,6 +47,8 @@ header .sub { color: var(--muted); font-size: 12px; margin-top: 4px; }
   border-radius: 12px;
   padding: 14px;
 }
+
+.panel.today { padding-left: 10px; padding-right: 10px; }
 
 .row { display: flex; gap: 12px; align-items: center; }
 .space { height: 14px; }
@@ -73,6 +70,7 @@ button.primary {
   border-radius: 10px;
   font-weight: 600;
 }
+button.primary.btn-cta { width: 100%; padding: 14px 16px; font-size: 16px; border-radius: 12px; }
 button.ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.12); padding: 10px 14px; border-radius: 10px; }
 button.warn { background: var(--danger); color: white; border: 0; padding: 8px 12px; border-radius: 10px; }
 
@@ -149,3 +147,5 @@ label { color: var(--muted); font-size: 12px; }
 }
 .tabbar button[aria-selected="true"] { color: var(--text); }
 .tabbar .ico { display: block; font-size: 20px; line-height: 1; margin-bottom: 2px; }
+
+/* (quote styles removed) */

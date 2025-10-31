@@ -14,7 +14,7 @@ export default function TodayPanel({ today, savedEntry, draft, setDraft, setting
   const todayScore = savedEntry?.score ?? draft.score
   const todaySaved = !!savedEntry
   return (
-    <section className="panel" aria-label="today entry">
+    <section className="panel today" aria-label="today entry">
       <div className="row" style={{justifyContent:'space-between'}}>
         <div className="leftText" style={{flex:1}}>
           <div style={{fontWeight:700}}>How was your day?</div>
@@ -37,14 +37,20 @@ export default function TodayPanel({ today, savedEntry, draft, setDraft, setting
         disabled={todaySaved}
       />
       <div className="space" />
-      <div className="row" style={{justifyContent:'space-between'}}>
+      <div className="center">
         {!todaySaved ? (
-          <button className="primary" onClick={() => onSubmit({ ...draft, date: today })}>Submit</button>
+          <button className="primary btn-cta" onClick={() => onSubmit({ ...draft, date: today })}>Submit</button>
         ) : (
           <span className="sub">Saved — manage from Calendar</span>
         )}
-        {onInstallClick && <button className="ghost" onClick={onInstallClick}>Install App</button>}
       </div>
+      {onInstallClick && (
+        <>
+          <div className="spacerSm" />
+          <div className="center"><button className="ghost" onClick={onInstallClick}>Install App</button></div>
+        </>
+      )}
+      
     </section>
   )
 }
